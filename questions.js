@@ -29,26 +29,26 @@ var questions = [
 var score = 0;
 var questionIndex = 0;
 
-var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector("#startTime");
+var time = document.querySelector("#time");
+var start = document.querySelector("#start");
 var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
+// var card = document.querySelector("#card");
 
 var secondsLeft = 76;
 var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
-timer.addEventListener("click", function () {
+start.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            currentTime.textContent = "Time: " + secondsLeft;
+            time.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                currentTime.textContent = "Time's up!";
+                time.textContent = "Time's up!";
             }
         }, 1000);
     }
@@ -100,7 +100,7 @@ function compareAnwsers(event) {
 
 function allDone() {
     questionsDiv.innerHTML = "";
-    currentTime.innerHTML = "";
+    time.innerHTML = "";
 
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
