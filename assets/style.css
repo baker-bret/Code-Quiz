@@ -46,11 +46,11 @@
 }
 
 button {
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 textarea {
-    width: 90%;
+    width: 80%;
     margin: 20px;
 }
 
